@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Comment Template</title>
+</head>
+<body>
+<form>
+
+<!-- SECTION 1: APPLICATION -->
+<h2>Application</h2>
+
+<label for="case_action">Case Action:</label>
+<select id="case_action" name="case_action" aria-label="Case Action">
+    <option value="" disabled selected>Select an action</option>
+    <option value="intake">Intake</option>
+    <option value="case_change">Case Change</option>
+    <option value="add_program">Add Program</option>
+    <option value="add_member">Add Member</option>
+    <option value="redetermination">Redetermination</option>
+    <option value="reinstate">Reinstate</option>
+    <option value="mid_point_report">Mid Point Report</option>
+</select>
+<br><br>
+<label for="application_type">Application Type:</label>
+<select id="application_type_select" name="application_type" aria-label="Application Type">
+    <option value="" disabled="" selected="">Select a type</option>
+    <option value="ABE">ABE</option>
+    <option value="FFM">FFM</option>
+    <option value="WALK IN">WALK IN</option>
+    <option value="2378">2378</option>
+    <option value="683">683</option>
+    <option value="2890">2890</option>
+    <option value="643">643</option>
+    <option value="1893">1893</option>
+    <option value="3361">3361</option>
+    <option value="2905">2905</option>
+    <option value="OTHER">OTHER</option>
+</select>
+
+
+<!-- Text Input: Application Type -->
+<div class="other-app-type" style="display: none;">
+  <label for="application_type_text">Other App Type:</label>
+  <input type="text" id="application_type_text" name="application_type" title="Other App Type">
+</div>
+<br><br>
+
+
+<!-- Text Input: Date of Application -->
+<label for="date_of_application">Date of Application:</label>
+<input type="text" id="date_of_application" name="date_of_application" title="Date of Application"><br><br>
+
+<!-- Text Input: Application Date Stamped -->
+<label for="application_date_stamped">Application Date Stamped:</label>
+<input type="text" id="application_date_stamped" name="application_date_stamped" title="Application Date Stamped"><br><br>
+
+<!-- Text Input: Language -->
+<label for="language">Language:</label>
+<input type="text" id="language" name="language" title="Language"><br><br>
+
+<!-- Checkbox Group: Programs Requested -->
+<label for="programs_requested">Programs Requested: CTRL + CLICK to select multiple.</label>
+<select id="programs_requested" name="programs_requested" aria-label="Programs Requested" multiple>
+  <option value="" disabled="" selected="">Select a Program</option> 
+  <option value="MED">MED</option>
+  <option value="SNAP">SNAP</option>
+  <option value="TANF">TANF</option>
+  <option value="AABD">AABD</option>
+</select>
+
+<br><br>
+
+<!-- Checkbox Group: Medical Backdate -->
+<fieldset>
+    <legend>Medical Backdate</legend>
+
+    <label for="medical_backdate_1">
+        <input type="checkbox" id="medical_backdate_1" name="medical_backdate" value="1_month"> 1 Month
+    </label>
+
+    <label for="medical_backdate_2">
+        <input type="checkbox" id="medical_backdate_2" name="medical_backdate" value="2_months"> 2 Months
+    </label>
+
+    <label for="medical_backdate_3">
+        <input type="checkbox" id="medical_backdate_3" name="medical_backdate" value="3_months"> 3 Months
+    </label>
+</fieldset>
+<BR>
+<!-- Text Input: Additional Programs offered -->
+<label for="additional_programs_offered">Additional Programs offered:</label>
+<input type="text" id="additional_programs_offered" name="additional_programs_offered" title="Additional Programs offered"><br><br>
+
+<!-- Text Input: Cold Call #1 -->
+<label for="cold_call_1">Cold Call #1:</label>
+<input type="text" id="cold_call_1" name="cold_call_1" title="Cold Call #1">
+<!-- Cold Calls Status -->
+<label for="cold_calls_status_successful">
+    <input type="checkbox" id="cold_calls_status_successful" name="cold_calls_status" value="successful">Successful
+</label>
+
+<label for="cold_calls_status_unsuccessful">
+    <input type="checkbox" id="cold_calls_status_unsuccessful" name="cold_calls_status" value="unsuccessful">Unsuccessful
+</label>
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="cold_call_1_date_time">Cold Call 1 Date/Time:</label>
+<input type="datetime-local" id="cold_call_1_date_time" name="cold_call_1_date_time" title="Cold Call 1 Date/Time">
+<br><br>
+
+<!-- Text Input: Cold Call #2 -->
+<label for="cold_call_2">Cold Call #2:</label>
+<input type="text" id="cold_call_2" name="cold_call_2" title="Cold Call #2">
+<!-- Cold Calls Status -->
+<label for="cold_calls_status_successful_2">
+    <input type="checkbox" id="cold_calls_status_successful_2" name="cold_calls_status" value="successful"> Successful
+</label>
+
+<label for="cold_calls_status_unsuccessful_2">
+    <input type="checkbox" id="cold_calls_status_unsuccessful_2" name="cold_calls_status" value="unsuccessful"> Unsuccessful
+</label>
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<!-- Cold Call 2 Date/Time -->
+<label for="cold_call_2_date_time">Cold Call 2 Date/Time:</label>
+<input type="datetime-local" id="cold_call_2_date_time" name="cold_call_2_date_time" title="Cold Call 2 Date/Time">
+<br><br>
+
+<!-- Text Input: Appointment Scheduled -->
+<label for="appointment_scheduled">Appointment Scheduled:</label>
+<label for="appointment_scheduled_checkbox">
+  <input type="checkbox" id="appointment_scheduled_checkbox" name="appointment_scheduled_checkbox" value="1">
+  Appointment Scheduled
+</label>
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="appointment_scheduled_date_time">Date/Time:</label>
+<input type="datetime-local" id="appointment_scheduled_date_time" name="appointment_scheduled_date_time" title="Date/Time">
+
+<!-- Checkbox Group: Appointment Type -->
+<fieldset>
+    <legend>Appointment Type</legend>
+
+    <label for="in_person">
+        <input type="checkbox" id="in_person" name="Appointment_Type" value="in_person"> In Person
+    </label>
+
+    <label for="Telephone">
+        <input type="checkbox" id="Telephone" name="Appointment_Type" value="Telephone"> Telephone
+    </label>
+
+    <label for="not_required">
+        <input type="checkbox" id="not_required" name="Appointment_Type" value="not_required"> Not Required
+    </label>
+</fieldset>
+<br>
+
+<!-- Approved Rep -->
+<label for="approved_rep_yes">Approved Representative?</label>
+<input type="radio" id="approved_rep_yes" name="approved_rep" value="yes">Yes
+<input type="radio" id="approved_rep_no" name="approved_rep" value="no">No
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="approved_rep_text">Representative:</label>
+<input type="text" id="approved_rep_text" name="approved_rep_text"><br><br>
+
+
+<!-- SECTION 2: HOUSEHOLD -->
+<h2>Household</h2>
+
+<!-- Text Input: Head of Household -->
+<label for="head_of_household">Head of Household:</label>
+<input type="text" id="head_of_household" name="head_of_household"><br><br>
+
+<!-- Text Input: Household Size -->
+<label for="household_size">Household Size:</label>
+<input type="text" id="household_size" name="household_size"><br><br>
+
+<label for="household_members">Other Unit Members:</label><br>
+<textarea id="household_members" name="household_members" rows="5" cols="50"></textarea><br><br>
+
+<!-- Text Input: Non-Unit Members -->
+<label for="non_unit_member">Non-Unit Members:</label>
+<input type="text" id="non_unit_member" name="non_unit_member"><br><br>
+
+<!-- Text Input: Qualified Members -->
+<label for="qualified_members">Qualified Members:</label>
+<input type="text" id="qualified_members" name="qualified_members"><br><br>
+
+<BR><br><!-- Checkbox Group: Special Circumstances -->
+<fieldset style="display: flex; align-items: center;">
+  <legend>Special Circumstances:</legend>
+  <label for="special_circumstances_disability">
+    <input type="checkbox" id="special_circumstances_disability" name="special_circumstances" value="disability"> Disability
+  </label>
+  <span style="border-left: 1px solid black; padding-left: 5px;"></span>
+  <label for="special_circumstances_disability_txt" style="margin-left: 5px;">Individual:</label>
+  <input type="text" id="special_circumstances_disability_txt" name="special_circumstances_disability_txt">
+  
+  <label for="special_circumstances_pregnancy" style="padding-left: 5px;">
+    <input type="checkbox" id="special_circumstances_pregnancy" name="special_circumstances" value="pregnancy"> Pregnancy
+  </label>
+  <span style="border-left: 1px solid black; padding-left: 5px;"></span>
+  <label for="special_circumstances_pregnancy_txt" style="margin-left: 5px;">Individual:</label>
+  <input type="text" id="special_circumstances_pregnancy_txt" name="special_circumstances_pregnancy_txt">
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+  <label for="special_circumstances_pregnancy_txt_2" style="margin-left: 5px;">Due Date:</label>
+  <input type="text" id="special_circumstances_pregnancy_txt_2" name="special_circumstances_pregnancy_txt_2">
+</fieldset>
+<BR><br>
+
+<!-- Tax Filer -->
+<label for="tax_filer_yes">Tax Filer?</label>
+<input type="checkbox" id="tax_filer_yes" name="tax_filer" value="yes"> Yes
+<input type="checkbox" id="tax_filer_no" name="tax_filer" value="no"> No
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<!-- Joint Tax Filer -->
+<label for="joint_tax_filer_text">Joint Tax Filer:</label>
+<input type="text" id="joint_tax_filer_text" name="joint_tax_filer_text" placeholder="Enter joint tax filer information"><br><br>
+
+<label for="associated_cases_txt">Associated Cases:</label>
+<input type="text" id="associated_cases_txt" name="associated_cases_txt"><br><br>
+
+<h2>Updated Contact Information</h2>
+<label for="cust_homeless">
+    <input type="checkbox" id="cust_homeless" name="cust_homeless" title="Customer is Homeless.">
+    Customer has reported being homeless. 
+</label>
+<br><br>
+
+<!-- Text Input: Phone Number -->
+<label for="phone_number">Phone Number:</label>
+<input type="text" id="phone_number" name="phone_number"><br><br>
+
+<!-- Text Input: Email Address -->
+<label for="email_address">Email Address:</label>
+<input type="text" id="email_address" name="email_address"><br><br>
+
+<!-- Text Input: Mailing Address -->
+<label for="mailing_address">Mailing Address:</label>
+<input type="text" id="mailing_address" name="mailing_address"><br><br>
+
+<!-- Text Input: City -->
+<label for="city">City:</label>
+<input type="text" id="city" name="city"><br><br>
+
+<!-- Text Input: State -->
+<label for="state">State:</label>
+<input type="text" id="state" name="state"><br><br>
+
+<!-- Text Input: ZIP Code -->
+<label for="zip_code">ZIP Code:</label>
+<input type="text" id="zip_code" name="zip_code"><br><br><br>
+
+<!-- SECTION 10: NON-FINANCIAL FACTORS -->
+<h2>Non-Financial Factors</h2>
+
+<!-- Clearances Triggered/Retriggered -->
+<label for="clearances_triggered">
+    <input type="checkbox" id="clearances_triggered" name="clearances_triggered" value="yes"> Clearances Triggered/Retriggered for each unit member?
+</label><br><br>
+
+<!-- Identity Verification -->
+<label for="identity_verification">Identity Verification:</label>
+<textarea id="identity_verification" name="identity_verification"></textarea><br><br>
+
+<!-- Residency Verification -->
+<label for="residency_verification">Residency Verification:</label>
+<textarea id="residency_verification" name="residency_verification"></textarea><br><br>
+
+<!-- Citizenship Verification -->
+<label for="citizenship_verification">Citizenship Verification:</label>
+<textarea id="citizenship_verification" name="citizenship_verification"></textarea><br><br>
+
+<!-- Student Status -->
+<label for="student_status">Student Status:</label>
+<input type="checkbox" id="student_status" name="student_status" value="yes"> Yes
+<input type="checkbox" id="student_status_no" name="student_status" value="no"> No
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="enrolled">Enrolled:</label>
+<textarea id="enrolled" name="enrolled"></textarea><br><br>
+
+<!-- Out of State Benefits -->
+<label for="out_of_state_benefits">Out of State Benefits:</label>
+<input type="checkbox" id="out_of_state_benefits" name="out_of_state_benefits" value="yes"> Yes
+<input type="checkbox" id="out_of_state_benefits_no" name="out_of_state_benefits" value="no"> No<br><br>
+
+<!-- Type of Benefit Received -->
+<label for="type_of_benefit_received">Type of Benefit Received:</label>
+<input type="text" id="type_of_benefit_received" name="type_of_benefit_received"><br><br>
+		
+<!-- SECTION 10: NON-FINANCIAL FACTORS (CONTINUED) -->
+
+<!-- Benefit Previously Received From -->
+<label for="benefit_previously_received_from">Benefit Previously Received From:</label>
+<input type="text" id="benefit_previously_received_from" name="benefit_previously_received_from"><br><br>
+
+<!-- Last Month Received -->
+<label for="last_month_received">Last Month Received:</label>
+<input type="text" id="last_month_received" name="last_month_received"><br><br>
+
+<!-- Verification Used -->
+<label for="verification_used">Verification Used:</label>
+<input type="text" id="verification_used" name="verification_used"><br><br>
+
+<!-- TPL -->
+<label for="tpl">TPL:</label>
+<input type="text" id="tpl" name="tpl"><br><br>
+
+<!-- TPL Explained -->
+<label for="tpl_explained">TPL Explained:</label>
+<textarea id="tpl_explained" name="tpl_explained"></textarea><br><br>
+
+<!-- Sanctions/Disqualifications -->
+<label for="sanctions_disqualifications">Sanctions/Disqualifications:</label>
+<input type="text" id="sanctions_disqualifications" name="sanctions_disqualifications"><br><br>
+
+<!-- Family Assessment completed for TANF? -->
+<label for="family_assessment_tanf">Family Assessment completed for TANF?</label>
+<input type="checkbox" id="family_assessment_tanf_yes" name="family_assessment_tanf" value="yes"> Yes
+<input type="checkbox" id="family_assessment_tanf_no" name="family_assessment_tanf" value="no"> No<br><br>
+
+<!-- RSP signed mailed for TANF? -->
+<label for="rsp_signed_mailed_tanf">RSP signed mailed for TANF?</label>
+<input type="checkbox" id="rsp_signed_mailed_tanf_yes" name="rsp_signed_mailed_tanf" value="yes"> Yes
+<input type="checkbox" id="rsp_signed_mailed_tanf_no" name="rsp_signed_mailed_tanf" value="no"> No<br><br>
+
+<!-- Relationship Verified for TANF? -->
+<label for="relationship_verified_tanf">Relationship Verified for TANF?</label>
+<input type="checkbox" id="relationship_verified_tanf_yes" name="relationship_verified_tanf" value="yes"> Yes
+<input type="checkbox" id="relationship_verified_tanf_no" name="relationship_verified_tanf" value="no"> No<br><br>
+
+<!-- Proof of living with for TANF? -->
+<label for="proof_of_living_tanf">Proof of living with for TANF?</label>
+<input type="checkbox" id="proof_of_living_tanf_yes" name="proof_of_living_tanf" value="yes"> Yes
+<input type="checkbox" id="proof_of_living_tanf_no" name="proof_of_living_tanf" value="no"> No<br><br>
+
+<!-- TANF Work & Training, SNAP Work Provisions, and Snap work requirements page? -->
+<label for="tanf_work_training_snap_provisions_requirements">TANF Work & Training, SNAP Work Provisions, and Snap work requirements page?</label>
+<input type="checkbox" id="tanf_work_training_snap_provisions_requirements_yes" name="tanf_work_training_snap_provisions_requirements" value="yes"> Yes
+<input type="checkbox" id="tanf_work_training_snap_provisions_requirements_no" name="tanf_work_training_snap_provisions_requirements" value="no"> No<br><br>
+
+<!-- Snap Work Provisions Exemptions? -->
+<label for="snap_work_provisions_exemptions">Snap Work Provisions Exemptions?</label>
+<input type="checkbox" id="snap_work_provisions_exemptions_yes" name="snap_work_provisions_exemptions" value="yes"> Yes
+<input type="checkbox" id="snap_work_provisions_exemptions_no" name="snap_work_provisions_exemptions" value="no"> No
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="exemptions_snap_work_provisions">Exemptions:</label>
+<textarea id="exemptions_snap_work_provisions" name="exemptions_snap_work_provisions"></textarea><br><br>
+
+<!-- Snap Work Requirement Exemptions? -->
+<label for="snap_work_requirement_exemptions">Snap Work Requirement Exemptions?</label>
+<input type="checkbox" id="snap_work_requirement_exemptions_yes" name="snap_work_requirement_exemptions" value="yes"> Yes
+<input type="checkbox" id="snap_work_requirement_exemptions_no" name="snap_work_requirement_exemptions" value="no"> No
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="exemptions_snap_work_requirement">Exemptions:</label>
+<textarea id="exemptions_snap_work_requirement" name="exemptions_snap_work_requirement"></textarea><br><br>
+
+<!-- TANF Work and Training Exemption Reason -->
+<label for="tanf_work_training_exemption_reason">TANF Work and Training Exemption Reason:</label>
+<input type="text" id="tanf_work_training_exemption_reason" name="tanf_work_training_exemption_reason"><br><br>
+
+<!-- TANF 60 Month Exemption Reason -->
+<label for="tanf_60_month_exemption_reason">TANF 60 Month Exemption Reason:</label>
+<input type="text" id="tanf_60_month_exemption_reason" name="tanf_60_month_exemption_reason"><br><br>
+
+<!-- Work Provisions Status -->
+<label for="work_provisions_status">Work Provisions Status:</label>
+<input type="text" id="work_provisions_status" name="work_provisions_status"><br><br>
+
+<!-- ABAWD Status -->
+<label for="abawd_status">ABAWD Status:</label>
+<input type="text" id="abawd_status" name="abawd_status"><br><br>
+
+
+
+
+<!-- SECTION 5: INCOME -->
+<h2>Income</h2>
+
+<label for="no_income_reported">
+    <input type="checkbox" id="no_income_reported" name="no_income_reported" title="Customer did not report any income and no income found in clearance">
+    Customer did not report any income and no income found in clearance
+</label>
+<br><br>
+
+<!-- INCOME INPUTS - INCOME RECORD 1 -->
+<label for="income_source_name_1">Income source for:</label>
+<input type="text" id="income_source_name_1" name="income_source_name_1" placeholder="Income source name"><br><br>
+
+<label for="income_source_1">Source of Income:</label>
+<input type="text" id="income_source_1" name="income_source_1" placeholder="Source of Income"><br><br>
+
+<label for="contribution_source_1">Contribution from:</label>
+<input type="text" id="contribution_source_1" name="contribution_source_1" placeholder="Contribution source"><br><br>
+
+<label for="income_type_earned_1">Income Type:</label>
+<input type="radio" id="income_type_earned_1" name="income_type_1" value="earned" title="Earned Income"> Earned
+
+<label for="income_type_unearned_1"></label>
+<input type="radio" id="income_type_unearned_1" name="income_type_1" value="unearned" title="Unearned Income"> Unearned
+
+<label for="income_type_self_employment_1"></label>
+<input type="radio" id="income_type_self_employment_1" name="income_type_1" value="self_employment" title="Self-Employment Income"> Self-Employment
+
+<label for="income_type_other_1"></label>
+<input type="radio" id="income_type_other_1" name="income_type_1" value="other" title="Other Income"> Other
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="income_type_other_details_1">Other income type:</label>
+<input type="text" id="income_type_other_details_1" name="income_type_other_details_1" placeholder="Other Income Details"><br><br>
+
+<label for="payFrequency">Pay frequency:</label>
+<input type="text" id="payFrequency" name="payFrequency">
+<select id="pay_frequency_1" name="pay_frequency_1" aria-label="Pay Frequency 1">
+    <option value="" disabled selected>Select a frequency</option>
+    <option value="weekly">Weekly</option>
+    <option value="bi-weekly">Bi-weekly</option>
+    <option value="monthly">Monthly</option>
+</select><br><br>
+<label for="change_anticipated_1">Change Anticipated?</label>
+<label>
+    <input type="checkbox" name="change_anticipated_1" value="yes" title="Change anticipated - Yes">
+    Yes
+</label>
+
+<label>
+    <input type="checkbox" name="change_anticipated_1" value="no" title="Change anticipated - No">
+    No
+</label>
+<br><BR>
+<label for="verifications_used_1">Verifications used:</label>
+<input type="text" id="verifications_used_1" name="verifications_used_1" placeholder="Verifications used"><br><br>
+
+<label>Verified income received 30 days from:</label>
+<input type="text" id="verified_income_date_1" name="verified_income_date_1" placeholder="Verified income received 30 days from"><br><br>
+
+<label for="verified_income_already_received_1">
+    <input type="checkbox" id="verified_income_already_received_1" name="verified_income_already_received_1" title="Verified income already received during the month of application up to interview date">
+    Verified income already received during the month of application up to interview date
+</label>
+<br><br>
+
+<label for="income_source_explanation_1">Explanation of Income Source:</label>
+<textarea id="income_source_explanation_1" name="income_source_explanation_1" placeholder="Explanation of Income Source"></textarea><br><br><br><br>
+
+
+<!-- INCOME INPUTS - INCOME RECORD 2 -->
+<label for="income_source_name_2">Income source for:</label>
+<input type="text" id="income_source_name_2" name="income_source_name_2" placeholder="Income source name"><br><br>
+
+<label for="income_source_2">Source of Income:</label>
+<input type="text" id="income_source_2" name="income_source_2" placeholder="Source of Income"><br><br>
+
+<label for="contribution_source_2">Contribution from:</label>
+<input type="text" id="contribution_source_2" name="contribution_source_2" placeholder="Contribution source"><br><br>
+
+<label for="income_type_earned_2">Income Type:</label>
+<input type="radio" id="income_type_earned_2" name="income_type_2" value="earned" title="Earned Income"> Earned
+
+<label for="income_type_unearned_2"></label>
+<input type="radio" id="income_type_unearned_2" name="income_type_2" value="unearned" title="Unearned Income"> Unearned
+
+<label for="income_type_self_employment_2"></label>
+<input type="radio" id="income_type_self_employment_2" name="income_type_2" value="self_employment" title="Self-Employment Income"> Self-Employment
+
+<label for="income_type_other_2"></label>
+<input type="radio" id="income_type_other_2" name="income_type_2" value="other" title="Other Income"> Other
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="income_type_other_details_2">Other income type:</label>
+<input type="text" id="income_type_other_details_2" name="income_type_other_details_2" placeholder="Other Income Details"><br><br>
+
+
+<label>Pay frequency:</label>
+<select id="pay_frequency_2" name="pay_frequency_2" aria-label="Pay Frequency 2">
+    <option value="" disabled selected>Select a frequency</option>
+    <option value="weekly">Weekly</option>
+    <option value="bi-weekly">Bi-weekly</option>
+    <option value="monthly">Monthly</option>
+</select><br><br>
+<label for="change_anticipated_2">Change Anticipated?</label>
+<label>
+    <input type="checkbox" name="change_anticipated_2" value="yes" title="Change anticipated - Yes">
+    Yes
+</label>
+
+<label>
+    <input type="checkbox" name="change_anticipated_2" value="no" title="Change anticipated - No">
+    No
+</label>
+<br><BR>
+<label for="verifications_used_2">Verifications used:</label>
+<input type="text" id="verifications_used_2" name="verifications_used_2" placeholder="Verifications used"><br><br>
+
+<label>Verified income received 30 days from:</label>
+<input type="text" id="verified_income_date_2" name="verified_income_date_2" placeholder="Verified income received 30 days from"><br><br>
+
+<label for="verified_income_already_received_2">
+    <input type="checkbox" id="verified_income_already_received_2" name="verified_income_already_received_2" title="Verified income already received during the month of application up to interview date">
+    Verified income already received during the month of application up to interview date
+</label>
+<br><br>
+
+<label for="income_source_explanation_2">Explanation of Income Source:</label>
+<textarea id="income_source_explanation_2" name="income_source_explanation_2" placeholder="Explanation of Income Source"></textarea><br><br><br><br>
+
+
+
+<!-- INCOME INPUTS - INCOME RECORD 3 -->
+<label for="income_source_name_3">Income source for:</label>
+<input type="text" id="income_source_name_3" name="income_source_name_3" placeholder="Income source name"><br><br>
+
+<label for="income_source_3">Source of Income:</label>
+<input type="text" id="income_source_3" name="income_source_3" placeholder="Source of Income"><br><br>
+
+<label for="contribution_source_3">Contribution from:</label>
+<input type="text" id="contribution_source_3" name="contribution_source_3" placeholder="Contribution source"><br><br>
+
+<label for="income_type_earned_3">Income Type:</label>
+<input type="radio" id="income_type_earned_3" name="income_type_3" value="earned" title="Earned Income"> Earned
+
+<label for="income_type_unearned_3"></label>
+<input type="radio" id="income_type_unearned_3" name="income_type_3" value="unearned" title="Unearned Income"> Unearned
+
+<label for="income_type_self_employment_3"></label>
+<input type="radio" id="income_type_self_employment_3" name="income_type_3" value="self_employment" title="Self-Employment Income"> Self-Employment
+
+<label for="income_type_other_3"></label>
+<input type="radio" id="income_type_other_3" name="income_type_3" value="other" title="Other Income"> Other
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="income_type_other_details_3">Other income type:</label>
+<input type="text" id="income_type_other_details_3" name="income_type_other_details_3" placeholder="Other Income Details"><br><br>
+
+
+<label>Pay frequency:</label>
+<select id="pay_frequency_3" name="pay_frequency_3" aria-label="Pay Frequency 3">
+    <option value="" disabled selected>Select a frequency</option>
+    <option value="weekly">Weekly</option>
+    <option value="bi-weekly">Bi-weekly</option>
+    <option value="monthly">Monthly</option>
+</select><br><br>
+<label for="change_anticipated_3">Change Anticipated?</label>
+<label>
+    <input type="checkbox" name="change_anticipated_3" value="yes" title="Change anticipated - Yes">
+    Yes
+</label>
+
+<label>
+    <input type="checkbox" name="change_anticipated_3" value="no" title="Change anticipated - No">
+    No
+</label>
+<br><BR>
+<label for="verifications_used_3">Verifications used:</label>
+<input type="text" id="verifications_used_3" name="verifications_used_3" placeholder="Verifications used"><br><br>
+
+<label>Verified income received 30 days from:</label>
+<input type="text" id="verified_income_date_3" name="verified_income_date_3" placeholder="Verified income received 30 days from"><br><br>
+
+<label for="verified_income_already_received_3">
+    <input type="checkbox" id="verified_income_already_received_3" name="verified_income_already_received_3" title="Verified income already received during the month of application up to interview date">
+    Verified income already received during the month of application up to interview date
+</label>
+<br><br>
+
+<label for="income_source_explanation_3">Explanation of Income Source:</label>
+<textarea id="income_source_explanation_3" name="income_source_explanation_3" placeholder="Explanation of Income Source"></textarea><br><br><br><br>
+
+
+
+<!-- INCOME INPUTS - INCOME RECORD 4 -->
+<label for="income_source_name_4">Income source for:</label>
+<input type="text" id="income_source_name_4" name="income_source_name_4" placeholder="Income source name"><br><br>
+
+<label for="income_source_4">Source of Income:</label>
+<input type="text" id="income_source_4" name="income_source_4" placeholder="Source of Income"><br><br>
+
+<label for="contribution_source_4">Contribution from:</label>
+<input type="text" id="contribution_source_4" name="contribution_source_4" placeholder="Contribution source"><br><br>
+
+<label for="income_type_earned_4">Income Type:</label>
+<input type="radio" id="income_type_earned_4" name="income_type_4" value="earned" title="Earned Income"> Earned
+
+<label for="income_type_unearned_4"></label>
+<input type="radio" id="income_type_unearned_4" name="income_type_4" value="unearned" title="Unearned Income"> Unearned
+
+<label for="income_type_self_employment_4"></label>
+<input type="radio" id="income_type_self_employment_4" name="income_type_4" value="self_employment" title="Self-Employment Income"> Self-Employment
+
+<label for="income_type_other_4"></label>
+<input type="radio" id="income_type_other_4" name="income_type_4" value="other" title="Other Income"> Other
+<span style="border-left: 1px solid black; padding-left: 5px;"></span>
+<label for="income_type_other_details_4">Other income type:</label>
+<input type="text" id="income_type_other_details_4" name="income_type_other_details_4" placeholder="Other Income Details"><br><br>
+
+
+<label>Pay frequency:</label>
+<select id="pay_frequency_4" name="pay_frequency_4" aria-label="Pay Frequency 4">
+    <option value="" disabled selected>Select a frequency</option>
+    <option value="weekly">Weekly</option>
+    <option value="bi-weekly">Bi-weekly</option>
+    <option value="monthly">Monthly</option>
+</select><br><br>
+<label for="change_anticipated_4">Change Anticipated?</label>
+<label>
+    <input type="checkbox" name="change_anticipated_4" value="yes" title="Change anticipated - Yes">
+    Yes
+</label>
+
+<label>
+    <input type="checkbox" name="change_anticipated_4" value="no" title="Change anticipated - No">
+    No
+</label>
+<br><BR>
+<label for="verifications_used_4">Verifications used:</label>
+<input type="text" id="verifications_used_4" name="verifications_used_4" placeholder="Verifications used"><br><br>
+
+<label>Verified income received 40 days from:</label>
+<input type="text" id="verified_income_date_4" name="verified_income_date_4" placeholder="Verified income received 40 days from"><br><br>
+
+<label for="verified_income_already_received_4">
+    <input type="checkbox" id="verified_income_already_received_4" name="verified_income_already_received_4" title="Verified income already received during the month of application up to interview date">
+    Verified income already received during the month of application up to interview date
+</label>
+<br><br>
+
+<label for="income_source_explanation_4">Explanation of Income Source:</label>
+<textarea id="income_source_explanation_4" name="income_source_explanation_4" placeholder="Explanation of Income Source"></textarea><br><br><br><br>
+
+
+
+<!-- SECTION 6: RESOURCES -->
+<h2>Resources</h2>
+
+<label>
+    <input type="checkbox" name="no_resources_reported"> Customer did not report any resources
+</label><br><br>
+
+<label for="liquid_assets">Liquid assets for expedited eligibility:</label>
+<textarea id="liquid_assets" name="liquid_assets"></textarea><br><br>
+
+<label for="all_assets">All assets if required for EDG:</label>
+<textarea id="all_assets" name="all_assets"></textarea><br><br>
+
+<label for="explanation_resources">Explanation of Resources:</label>
+<textarea id="explanation_resources" name="explanation_resources"></textarea><br><br>
+
+
+<!-- SECTION 7: EXPENSES -->
+<h2>Expenses</h2>
+
+<label>
+    <input type="checkbox" name="no_expenses_reported"> Customer did not report any expenses
+</label><br><br>
+
+<!-- Housing Expense -->
+<label for="housing_expense">Housing Expense:</label>
+<select id="housing_expense" name="housing_expense">
+    <option value="" disabled selected>Select an expense</option>
+    <option value="mortgage">Mortgage</option>
+    <option value="rent">Rent</option>
+    <option value="property_taxes">Property Taxes</option>
+    <!-- Add other housing expense options as needed -->
+</select><br><br>
+
+<label for="housing_cost">Housing Cost:</label>
+<input type="text" id="housing_cost" name="housing_cost"><br><br>
+
+<label for="document_housing_expenses">Document Housing Expenses:</label>
+<textarea id="document_housing_expenses" name="document_housing_expenses"></textarea><br><br>
+
+<label for="homeless_shelter_verification">Homeless Shelter Expense verification:</label>
+<input type="text" id="homeless_shelter_verification" name="homeless_shelter_verification"><br><br>
+
+<label for="housing_assistance">Housing Assistance:</label>
+<select id="housing_assistance" name="housing_assistance">
+    <option value="" disabled selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+</select><br><br>
+
+<label for="source_amount_housing_assistance">Source and Amount of Housing Assistance:</label>
+<input type="text" id="source_amount_housing_assistance" name="source_amount_housing_assistance"><br><br>
+
+<!-- Utility Standard -->
+<label for="utility_standard">Utility standard:</label>
+<select id="utility_standard" name="utility_standard">
+    <option value="none">None</option>
+    <option value="ac_heat">AC/Heat</option>
+    <option value="limited">Limited</option>
+    <option value="single">Single</option>
+    <option value="telephone">Telephone</option>
+    <!-- Add other utility standard options as needed -->
+</select><br><br>
+
+<label for="housing_cost_discrepancies">Housing Cost discrepancies addressed:</label>
+<textarea id="housing_cost_discrepancies" name="housing_cost_discrepancies"></textarea><br><br>
+
+<!-- Dependent Care Costs -->
+<label for="dependent_care_costs">Dependent care costs:</label>
+<input type="text" id="dependent_care_costs" name="dependent_care_costs"><br><br>
+
+<label for="supportive_services">Are supportive services being received to cover dependent care costs:</label>
+<select id="supportive_services" name="supportive_services">
+    <option value="" disabled selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+</select><br><br>
+
+<!-- Child Support Deduction -->
+<label for="child_support_deduction_amount">Child Support Deduction Amount:</label>
+<input type="text" id="child_support_deduction_amount" name="child_support_deduction_amount"><br><br>
+
+<label for="child_support_frequency">Frequency:</label>
+<input type="text" id="child_support_frequency" name="child_support_frequency"><br><br>
+
+<!-- Medical Expenses -->
+<label for="total_medical_expenses">Total medical expenses:</label>
+<select id="total_medical_expenses" name="total_medical_expenses">
+    <option value="standard_deduction">Standard Medical Deduction</option>
+    <option value="actual_expenses">Actual Medical Expenses</option>
+    <option value="none_claimed">None claimed</option>
+</select><br><br>
+
+<label for="medical_expenses_tme">Medical Expenses for TME deduction:</label>
+<input type="text" id="medical_expenses_tme" name="medical_expenses_tme"><br><br>
+
+<label for="medical_expenses_spenddown">Medical Expenses for Spenddown:</label>
+<input type="text" id="medical_expenses_spenddown" name="medical_expenses_spenddown"><br><br>
+
+<label for="additional_expense_comments">Additional Expense Comments:</label>
+<textarea id="additional_expense_comments" name="additional_expense_comments"></textarea><br><br>
+
+<label for="other_expense_discrepancies">Other expense discrepancies addressed:</label>
+<textarea id="other_expense_discrepancies" name="other_expense_discrepancies"></textarea><br><br>
+
+<!-- SECTION 8: FINANCIAL MANAGEMENT -->
+<h2>Financial Management</h2>
+
+<label>Financial Management discussed:</label>
+<input type="radio" name="financial_management_discussed" value="yes"> Yes
+<input type="radio" name="financial_management_discussed" value="n/a"> N/A<br><br>
+
+<label for="financial_management_explanation">Financial Management Explanation:</label>
+<textarea id="financial_management_explanation_txt" name="financial_management_explanation_txt"></textarea>
+<br><br><br><br><br><br>
+
+
+<!-- Continue with the rest of the code for the form -->
+<!-- SECTION 9: RIGHTS & RESPONSIBILITIES -->
+<h2>Rights & Responsibilities</h2>
+
+<label for="rights_responsibilities_discussed">Rights and Responsibilities discussed:</label>
+<select id="rights_responsibilities_discussed" name="rights_responsibilities_discussed" title="Select the mode of discussion">
+    <option value="in_person">In Person</option>
+    <option value="phone">Phone</option>
+    <option value="mail">Mail</option>
+    <option value="online">Online</option>
+    <option value="other">Other</option>
+</select><br><br>
+
+<label for="financial_management_explanation">Financial Management Explanation:</label>
+<textarea id="financial_management_explanation" name="financial_management_explanation" title="Provide an explanation of financial management"></textarea><br><br>
+
+<label>Copy of Application:</label>
+<input type="checkbox" name="copy_of_application_offered" value="offered" title="Offered"> Offered
+<input type="checkbox" name="copy_of_application_accepted" value="accepted" title="Accepted"> Accepted
+<input type="checkbox" name="copy_of_application_mailed" value="mailed" title="Mailed"> Mailed<br><br>
+
+<label for="mandatory_forms_initial_provided">Mandatory forms for Initial provided:</label>
+<input type="checkbox" name="mandatory_forms_initial_provided" value="yes" title="Initial forms provided"> Yes<br><br>
+
+<label for="mandatory_forms_redetermination_provided">Mandatory forms for Redetermination provided:</label>
+<input type="checkbox" name="mandatory_forms_redetermination_provided" value="yes" title="Redetermination forms provided"> Yes<br><br>
+
+<label for="work_rules_discussed_snap">Work Rules discussed:</label>
+<input type="checkbox" name="work_rules_discussed_snap" value="snap" title="SNAP Work Rules (IL444-5175) Uploaded to ECR"> SNAP Work Rules (IL444-5175) Uploaded to ECR
+<input type="checkbox" name="work_rules_discussed_other" value="other" title="Other work rules discussed"> Other<br><br>
+
+<label for="work_rules_discussed_other_names">If "SNAP Work Rules (IL444-5175) Uploaded to ECR" was selected in the previous question, enter the name of each individual indicated on the 5175:</label>
+<textarea id="work_rules_discussed_other_names" name="work_rules_discussed_other_names" title="Enter names of individuals"></textarea><br><br>
+
+<!-- Benefits/Determination -->
+<h2>Benefits/Determination</h2>
+
+<!-- Certification results -->
+<label for="snap_certification">SNAP:</label>
+<select id="snap_certification" name="snap_certification" title="Select SNAP Certification Status">
+  <option value="" selected disabled>Select</option>
+  <option value="approved">Approved</option>
+  <option value="denied">Denied</option>
+  <option value="pending">Pending</option>
+  <option value="closed">Closed</option>
+</select><br><br>
+
+<!-- SNAP Comments -->
+<label for="snap_comments">SNAP Comments:</label>
+<textarea id="snap_comments" name="snap_comments" title="Enter comments for SNAP"></textarea><br><br>
+
+<!-- Expedited -->
+<label for="expedited">Expedited:</label>
+<input type="checkbox" name="expedited" value="yes" title="Check if expedited benefits are granted"> Yes
+<input type="checkbox" name="expedited" value="no" title="Check if expedited benefits are not granted"> No<br><br>
+
+<!-- 2nd Month Expedited -->
+<label for="second_month_expedited">2nd Month Expedited:</label>
+<input type="checkbox" name="second_month_expedited" value="yes" title="Check if 2nd month expedited benefits are granted"> Yes
+<input type="checkbox" name="second_month_expedited" value="no" title="Check if 2nd month expedited benefits are not granted"> No<br><br>
+
+<!-- Reporting Status -->
+<label for="reporting_status">Reporting Status:</label>
+<input type="text" id="reporting_status" name="reporting_status" title="Enter reporting status"><br><br>
+
+<!-- Link Card Issued -->
+<label for="link_card_issued">Link Card Issued:</label>
+<select id="link_card_issued" name="link_card_issued" title="Select Link Card Issuance Method">
+  <option value="" selected disabled>Select</option>
+  <option value="via_mail">Via Mail</option>
+  <option value="in_person">In Person</option>
+  <option value="not_applicable">N/A - Previously Issued</option>
+</select><br><br>
+
+<!-- Medical -->
+<label for="medical_certification">Medical:</label>
+<select id="medical_certification" name="medical_certification" title="Select Medical Certification Status">
+  <option value="" selected disabled>Select</option>
+  <option value="approved">Approved</option>
+  <option value="denied">Denied</option>
+  <option value="pending">Pending</option>
+</select><br><br>
+
+<!-- Medical Comments -->
+<label for="medical_comments">Medical Comments:</label>
+<textarea id="medical_comments" name="medical_comments" title="Enter comments for Medical Certification"></textarea><br><br>
+
+<!-- TANF -->
+<label for="tanf_certification">TANF:</label>
+<select id="tanf_certification" name="tanf_certification" title="Select TANF Certification Status">
+  <option value="" selected disabled>Select</option>
+  <option value="approved">Approved</option>
+  <option value="denied">Denied</option>
+  <option value="pending">Pending</option>
+</select><br><br>
+
+<!-- TANF Comments -->
+<label for="tanf_comments">TANF Comments:</label>
+<textarea id="tanf_comments" name="tanf_comments" title="Enter comments for TANF Certification"></textarea><br><br>
+
+<!-- AABD Cash -->
+<label for="aabd_cash_certification">AABD Cash:</label>
+<select id="aabd_cash_certification" name="aabd_cash_certification" title="Select AABD Cash Certification Status">
+  <option value="" selected disabled>Select</option>
+  <option value="approved">Approved</option>
+  <option value="denied">Denied</option>
+  <option value="pending">Pending</option>
+</select><br><br>
+
+<!-- AABD Cash Comments -->
+<label for="aabd_cash_comments">AABD Cash Comments:</label>
+<textarea id="aabd_cash_comments" name="aabd_cash_comments" title="Enter comments for AABD Cash Certification"></textarea><br><br>
+
+<!-- MSP -->
+<label for="msp_certification">MSP:</label>
+<select id="msp_certification" name="msp_certification" title="Select MSP Certification Status">
+  <option value="" selected disabled>Select</option>
+  <option value="approved">Approved</option>
+  <option value="denied">Denied</option>
+  <option value="pending">Pending</option>
+</select><br><br>
+
+<!-- MSP Comments -->
+<label for="msp_comments">MSP Comments:</label>
+<textarea id="msp_comments" name="msp_comments" title="Enter comments for MSP Certification"></textarea><br><br>
+
+<!-- VCL -->
+<label for="vcl">VCL:</label>
+<textarea id="vcl" name="vcl" title="Enter VCL Comments"></textarea><br><br>
+
+<!-- Correspondence -->
+<label>Correspondence:</label>
+<input type="checkbox" name="correspondence_central" value="central" title="Select if correspondence is central"> Centrally
+<input type="checkbox" name="correspondence_manual" value="manual" title="Select if correspondence is manual"> Locally<br><br>
+
+<!-- Text Notification -->
+<label for="text_notification">Text Notification:</label>
+<input type="checkbox" name="text_notification_opted_in" value="opted_in" title="Select if opted in for text notifications"> Opted In
+<input type="checkbox" name="text_notification_opted_out" value="opted_out" title="Select if opted out for text notifications"> Opted Out<br><br>
+
+<!-- Other Notes -->
+<h2>Other Notes</h2>
+<label for="discrepancies_from_application">Discrepancies from application:</label>
+<textarea id="discrepancies_from_application" name="discrepancies_from_application" title="Enter notes on discrepancies from the application"></textarea><br><br>
+
+<label for="comments">Comments:</label>
+<textarea id="comments" name="comments" title="Enter general comments"></textarea><br><br>
+
+<!-- Referrals -->
+<h2>Referrals</h2>
+<label for="referrals_offered">Referrals:</label>
+<textarea id="referrals_offered" name="referrals_offered" title="Enter offered referrals"></textarea><br><br>
+
+<!-- Submit Button -->
+<button type="submit" id="submitButton" title="Submit Form">Submit</button>
+</form>
+
+<script>
+const sections = document.querySelectorAll("section");
+console.log("Sections:");
+sections.forEach((section, index) => {
+  console.log(`Section ${index + 1}:`);
+  console.log(section.innerHTML); // Or section.textContent for text only
+});
+
+document.getElementById("application_type_select").addEventListener("change", function() {
+  const otherAppTypeContainer = document.querySelector(".other-app-type");
+  otherAppTypeContainer.style.display = this.value === "OTHER" ? "block" : "none";
+  document.getElementById("application_type_text").value = ""; // Clear the text input
+});
+
+async function handleClipboardPermission() {
+  const permissionStatus = await navigator.permissions.query({ name: "clipboard-write" });
+
+  if (permissionStatus.state === "granted") {
+    return true; // Permission already granted
+  }
+
+  if (permissionStatus.state === "prompt") {
+    const newPermissionStatus = await permissionStatus.request();
+    return newPermissionStatus.state === "granted";
+  }
+
+  // Handle denied or other permission states
+  alert("Clipboard write permission denied. Please grant permission to copy to clipboard.");
+  if (confirm("Re-request permission to copy to clipboard?")) {
+    return handleClipboardPermission(); // Recurse to request permission again
+  }
+
+  return false; // Permission not granted
+}
+
+document.getElementById("submitButton").addEventListener("click", async function() {
+  try {
+    if (await handleClipboardPermission()) {
+      const paragraph = buildParagraph(); // Call the function to build the paragraph
+      console.log("Copying to clipboard:", paragraph);
+      await navigator.clipboard.writeText(paragraph);
+      alert("Information copied to clipboard!");
+    }
+  } catch (err) {
+    console.error("Error while copying to clipboard:", err);
+    alert("Failed to copy information to clipboard");
+  }
+});
+
+function buildParagraph() {
+  let paragraph = ""; // Added the let keyword
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach((section, index) => {
+    console.log(`Processing section ${index + 1}`);
+    const labels = section.querySelectorAll("label");
+
+    labels.forEach(label => {
+      const input = label.querySelector("input, textarea");
+      if (input) {
+        const questionText = input.name;
+        const text = `${questionText}: ${input.type === 'checkbox' ? input.checked : input.value}\n`;
+        paragraph += text;
+      }
+    });
+
+    paragraph += "-----\n"; // Optional separator between questions within a section
+    if (index < sections.length - 1) {
+      paragraph += "*****\n"; // Separator between sections
+    }
+  }); // **Closing brace for sections.forEach loop added here**
+
+  return paragraph;
+}
+</script>
+
+
+</body>
+</html> 
